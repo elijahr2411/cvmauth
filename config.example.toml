@@ -1,0 +1,20 @@
+[mysql]
+host = "127.0.0.1"
+user = "cvmauth"
+pass = "hunter2"
+db = "cvmauth"
+
+# For pure banning and no bot filtering, change these all to false
+[tests]
+asn = true
+spur = true
+ip2proxy = true
+
+[cvmauth]
+# Block an IP if a test returns a warning (unsure)
+blockonwarn = false
+
+[http]
+port = 8181
+# This must match the NGINX location block which proxies cvmauth
+basedir = "/cvmauth/"
