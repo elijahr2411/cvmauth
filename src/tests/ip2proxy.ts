@@ -16,7 +16,7 @@ export default class ip2proxyTest implements Test {
                 res(TestResult.Error);
                 return;
             }
-            if (result.includes("Good news! This IP address is not a known proxy IP address.")) {
+            if (result.includes("No VPN or Proxy Detected")) {
                 res(TestResult.Pass);
             } else {
                 res(TestResult.Fail);
