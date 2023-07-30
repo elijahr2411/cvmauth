@@ -9,6 +9,7 @@ db = "cvmauth"
 asn = true
 spur = true
 ip2proxy = true
+ipinfokey = ""
 
 [cvmauth]
 # Block an IP if a test returns a warning (unsure)

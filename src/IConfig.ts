@@ -6,6 +6,7 @@ export default interface IConfig {
         db : string,
     };
     tests : {
+	ipinfokey : string,
         asn : boolean,
         spur : boolean,
         ip2proxy : boolean,

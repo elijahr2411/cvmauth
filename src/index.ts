@@ -31,7 +31,7 @@ if (Config.tests.asn) {
     var ASNList : string[] = [];
     var asnlistraw = fs.readFileSync("asn_blacklist").toString();
     asnlistraw.split('\n').filter(a=>a.startsWith("AS")).forEach(a => ASNList.push(a.split(' ')[0]));
-    tests.push(new ASNTest(ASNList));
+    tests.push(new ASNTest(ASNList, Config.tests.ipinfokey));
 }
 if (Config.tests.ip2proxy) tests.push(new ip2proxyTest());
 if (Config.tests.spur) tests.push(new SpurTest());
