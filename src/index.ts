@@ -40,7 +40,7 @@ var database = new Database(Config);
 
 if (process.argv.length > 2) {
     if (process.argv.length != 4) {
-        console.log("Usage: index.js <ban | unban> <ip>");
+        console.log("Usage: index.js <ban | whitelist> <ip>");
         process.exit(1);
     }
     switch (process.argv[2]) {
