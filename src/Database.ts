@@ -39,7 +39,7 @@ export default class Database {
             res();
         });
     }
-    query(query : string) : Promise<mysql.RowDataPacket[] | mysql.RowDataPacket[][] | mysql.OkPacket | mysql.OkPacket[] | mysql.ResultSetHeader> {
+    query(query : string) : Promise<mysql.OkPacket | mysql.ResultSetHeader | mysql.ResultSetHeader[] | mysql.RowDataPacket[] | mysql.RowDataPacket[][] | mysql.OkPacket[] | mysql.ProcedureCallPacket> {
         return new Promise((res, rej) => {
             this.db.query(query, (err, result) => {
                 if (err) {
@@ -50,7 +50,7 @@ export default class Database {
             })
         });
     }
-    queryPrep(query : string, values : any) : Promise<mysql.RowDataPacket[] | mysql.RowDataPacket[][] | mysql.OkPacket | mysql.OkPacket[] | mysql.ResultSetHeader> {
+    queryPrep(query : string, values : any) : Promise<mysql.OkPacket | mysql.ResultSetHeader | mysql.ResultSetHeader[] | mysql.RowDataPacket[] | mysql.RowDataPacket[][] | mysql.OkPacket[] | mysql.ProcedureCallPacket> {
         return new Promise((res, rej) => {
             this.db.query(query, values, (err, result) => {
                 if (err) {
