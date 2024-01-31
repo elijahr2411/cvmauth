@@ -22,7 +22,7 @@ export default class ASNTest implements Test {
 			res(TestResult.Error);
 			return;
 		}
-		if (this.BannedASNs.indexOf(result.org) !== -1) {
+		if (this.BannedASNs.indexOf(result.org.split(" ")[0]) !== -1) {
 			res(TestResult.Fail);
 			return;
 		} else {
