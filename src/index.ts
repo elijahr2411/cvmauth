@@ -4,8 +4,6 @@ import IConfig from './IConfig.js';
 import { Test, TestResult } from './test.js';
 import ASNTest from './tests/asn.js';
 import log from './log.js';
-import ip2proxyTest from './tests/ip2proxy.js';
-import SpurTest from './tests/spur.js';
 import Database, { IPLookupResult } from './Database.js';
 import { isIP } from 'node:net';
 import fastify from 'fastify';
@@ -33,8 +31,6 @@ if (Config.tests.asn) {
     asnlistraw.split('\n').filter(a=>a.startsWith("AS")).forEach(a => ASNList.push(a.split(' ')[0]));
     tests.push(new ASNTest(ASNList, Config.tests.ipinfokey));
 }
-if (Config.tests.ip2proxy) tests.push(new ip2proxyTest());
-if (Config.tests.spur) tests.push(new SpurTest());
 
 var database = new Database(Config);
 

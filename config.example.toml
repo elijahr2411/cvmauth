@@ -7,8 +7,6 @@ db = "cvmauth"
 # For pure banning and no bot filtering, change these all to false
 [tests]
 asn = true
-spur = true
-ip2proxy = true
 ipinfokey = ""
 
 [cvmauth]
